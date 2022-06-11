@@ -33,7 +33,7 @@ Users should be able to:
 ## Links
 
 - [GitHub repo](https://github.com/dominicva/rating-component)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [See it deployed here](https://rating-component-omega.vercel.app/)
 
 ## Built with
 
