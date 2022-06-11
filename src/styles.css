@@ -65,7 +65,7 @@ main {
   background: linear-gradient(0deg, hsla(215, 27%, 12%, 1) 0%, #232e3e 100%);
 }
 
-img {
+#star-icon {
   width: 40px;
   height: 40px;
   padding: 12px;
@@ -74,7 +74,13 @@ img {
   border-radius: 50%;
 }
 
-.card-text {
+#thank-you-icon {
+  display: none;
+  margin: 20px auto 16px;
+  width: 160px;
+}
+
+.card-content-container {
   margin-bottom: 8px;
 }
 
