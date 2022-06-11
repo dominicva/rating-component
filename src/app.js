@@ -12,17 +12,19 @@ const thankyouIcon = document.getElementById('thank-you-icon');
 const errEl = document.createElement('div');
 errEl.innerHTML = `<p style="color: red; font-size: 16px; font-weight: 500;">You need to pick a score before you can submit</p>`;
 
-const thanksHtml = `
-<div>
-  You selectetd ${selectedRating} out of 5
-</div>
-<h1>Thank you</h1>
-<div class="card-text">
-  <p>
-  We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!
-  </p>
-</div>
-`;
+function genThanksHtml(rating) {
+  return `
+  <div>
+    You selectetd ${rating} out of 5
+  </div>
+  <h1>Thank you</h1>
+  <div class="card-text">
+    <p>
+    We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!
+    </p>
+  </div>
+  `;
+}
 
 for (const btn of radioBtns) {
   btn.addEventListener('click', () => {
@@ -41,7 +43,7 @@ for (const btn of radioBtns) {
 
 submitBtn.addEventListener('click', () => {
   if (selectedRating) {
-    cardContent.innerHTML = thanksHtml;
+    cardContent.innerHTML = genThanksHtml(selectedRating);
     thankyouIcon.style.display = 'block';
     starIcon.style.display = 'none';
   } else {
