@@ -14,10 +14,10 @@ errEl.innerHTML = `<p style="color: red; font-size: 16px; font-weight: 500;">You
 
 function genThanksHtml(rating) {
   return `
-  <div>
+  <div id="result-badge">
     You selectetd ${rating} out of 5
   </div>
-  <h1>Thank you</h1>
+  <h1 class="thank-you-h1">Thank you!</h1>
   <div class="card-text">
     <p>
     We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!
