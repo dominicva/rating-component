@@ -1,14 +1,16 @@
 let selectedRating;
+// track if user submits without a selected rating
 let isError = false;
-
-const radioBtns = document.querySelectorAll('label');
-const cardContainer = document.querySelector('.card-container');
-const cardContent = document.querySelector('.card-content-container');
-const submitBtn = document.querySelector('button');
 
 const starIcon = document.getElementById('star-icon');
 const thankyouIcon = document.getElementById('thank-you-icon');
 
+const ratingBtns = document.querySelectorAll('label');
+const cardContainer = document.querySelector('.card-container');
+const cardContent = document.querySelector('.card-content-container'); // after icons
+const submitBtn = document.querySelector('button');
+
+// no rating selected + click submit -> user gets the warning
 const errEl = document.createElement('div');
 errEl.innerHTML = `<p style="color: red; font-size: 16px; font-weight: 500;">You need to pick a score before you can submit</p>`;
 
@@ -26,14 +28,15 @@ function genThanksHtml(rating) {
   `;
 }
 
-for (const btn of radioBtns) {
+for (const btn of ratingBtns) {
   btn.addEventListener('click', () => {
     if (isError) {
+      // clear out error state
       cardContainer.lastChild.remove();
       isError = false;
     }
-    // clear out any other orange state
-    radioBtns.forEach(b => b.classList.remove('orange'));
+    // only one btn should be orange at any moment
+    ratingBtns.forEach(b => b.classList.remove('orange'));
     // make this one orange
     btn.classList.add('orange');
     // keep track of selected rating
@@ -44,6 +47,7 @@ for (const btn of radioBtns) {
 submitBtn.addEventListener('click', () => {
   if (selectedRating) {
     cardContent.innerHTML = genThanksHtml(selectedRating);
+    // switch out icons when we change view
     thankyouIcon.style.display = 'block';
     starIcon.style.display = 'none';
   } else {

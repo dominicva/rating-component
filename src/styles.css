@@ -7,13 +7,13 @@
   --grey-light: hsl(217, 12%, 63%);
   --grey-medium: hsl(216, 12%, 54%);
   --blue-dark: hsl(213, 19%, 18%);
-  --blue-darkest: hsl(216, 12%, 8%);
   --background: #141519;
   --icon-bg: #2e3c52;
   /* typography */
   --font: 'Overpass', sans-serif;
   --font-size-base: 15px;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -60,7 +60,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 24px 20px;
+  padding: 28px 24px;
   border-radius: 24px;
   min-height: 380px;
   max-width: 400px;
@@ -86,7 +86,6 @@ main {
 
 .card-content-container {
   margin-top: 8px;
-  margin-bottom: 8px;
 }
 
 #main-heading {
@@ -118,6 +117,7 @@ main {
 }
 
 .card-text {
+  margin-bottom: 8px;
   text-align: center;
   max-width: 95%;
 }
@@ -157,14 +157,9 @@ input[type='radio'] {
   appearance: none;
 }
 
-input[type='radio']:checked {
-  background-color: var(--primary);
-}
-
 label {
   display: flex;
   justify-content: center;
-  /* padding: 8px; */
   padding-top: 12px;
   height: 40px;
   width: 40px;
@@ -188,17 +183,17 @@ label > span {
 
 button {
   height: 44px;
-  margin: 24px auto 0;
-  display: block;
   width: 90%;
+  display: block;
+  margin: 28px auto 0;
   border-radius: 32px;
+  border: none;
   background-color: var(--primary);
   color: var(--white);
   text-transform: uppercase;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 1.75px;
-  border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -210,4 +205,34 @@ button:hover {
 
 footer {
   height: 15vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/*
+CSS tricks FTW
+https://css-tricks.com/css-hover-effects-background-masks-3d/
+*/
+footer a {
+  text-decoration: none;
+  color: var(--grey-light);
+  --b: 1.5px; /* the thickness of the line */
+  --c: var(--grey-light);
+  padding-block: var(--b);
+  background: linear-gradient(var(--c) 50%, #000 0) 0%
+      calc(100% - var(--_p, 0%)) / 100% 200%,
+    linear-gradient(var(--c) 0 0) 0% var(--_p, 0%) / var(--_p, 0%) var(--b)
+      no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.25s var(--_s, 0s) linear,
+    background-size 0.25s calc(0.25s - var(--_s, 0s));
+}
+
+footer a:hover {
+  --_p: 100%;
+  --_s: 0.3s;
 }
