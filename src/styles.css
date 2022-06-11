@@ -51,6 +51,7 @@ p {
 }
 
 main {
+  padding: 16px;
   height: 85vh;
   display: flex;
   align-items: center;
@@ -157,6 +158,10 @@ input[type='radio'] {
   appearance: none;
 }
 
+input {
+  visibility: hidden;
+}
+
 label {
   display: flex;
   justify-content: center;
@@ -204,6 +209,7 @@ button:hover {
 }
 
 footer {
+  padding: 16px;
   height: 15vh;
   display: flex;
   justify-content: center;
