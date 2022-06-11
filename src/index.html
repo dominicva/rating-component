@@ -10,13 +10,13 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./styles.css" />
-    <script type="module" src="app.js"></script>
-    <title>Frontend Mentor | Interactive rating component</title>
+    <script defer type="module" src="app.js"></script>
+    <title>Interactive rating component</title>
   </head>
   <body>
     <main>
       <section class="card-container">
-        <img src="./images//icon-star.svg" alt="star icon" />
+        <img src="./images/icon-star.svg" alt="star icon" />
         <div>
           <h1>How did we do?</h1>
         </div>
@@ -27,15 +27,33 @@
           </p>
         </div>
         <div class="options-list-container">
-          <ul class="review-options-list">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
+          <form>
+            <div class="review-options-list">
+              <input type="radio" id="one" />
+              <label for="one">
+                <span>1</span>
+              </label>
+              <input type="radio" id="two" />
+              <label for="two">
+                <span>2</span>
+              </label>
+              <input type="radio" id="three" />
+              <label for="three">
+                <span>3</span>
+              </label>
+              <input type="radio" id="four" />
+              <label for="four">
+                <span>4</span>
+              </label>
+              <input type="radio" id="five" />
+              <label for="five">
+                <span>5</span>
+              </label>
+            </div>
+
+            <button type="submit">Submit</button>
+          </form>
         </div>
-        <button>Submit</button>
       </section>
     </main>
 
