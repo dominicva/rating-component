@@ -1,0 +1,17 @@
+{
+  "name": "interactive-rating-component-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Interactive rating component coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "Dom van Almsick <notthedom@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "2.6.0"
+  }
+}
